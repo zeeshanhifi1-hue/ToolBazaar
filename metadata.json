@@ -1,0 +1,8 @@
+{
+  "name": "ToolBazaar",
+  "description": "Premium Tools \u0026 Digital Products — Official, safe \u0026 instant access to top AI, video, design, and productivity tools at lowest prices.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,542 @@
+import type {
+  CategoryItem,
+  HeroBannerData,
+  NotificationItem,
+  OrderRecord,
+  ToolProduct,
+} from '../types/store';
+
+export const CATEGORIES: CategoryItem[] = [
+  {
+    id: 'all',
+    label: 'All',
+    description: 'Browse every verified premium tool & digital subscription.',
+  },
+  {
+    id: 'ai',
+    label: 'AI Tools',
+    description: 'ChatGPT Plus, Claude Pro, Midjourney & Perplexity AI.',
+  },
+  {
+    id: 'video',
+    label: 'Video Tools',
+    description: 'CapCut Pro, Premiere Pro & creator editing suites.',
+  },
+  {
+    id: 'design',
+    label: 'Design Tools',
+    description: 'Canva Pro, Adobe CC, Figma Pro & creative assets.',
+  },
+  {
+    id: 'productivity',
+    label: 'Productivity',
+    description: 'Notion Plus + AI, Grammarly Pro & workflow boosters.',
+  },
+  {
+    id: 'more',
+    label: 'More',
+    description: 'Stock templates, asset libraries & creator bundles.',
+  },
+];
+
+export const HERO_BANNERS: HeroBannerData[] = [
+  {
+    id: 'banner-welcome-home',
+    imageSrc: '/assets/aistudio/image_69901163.png',
+    alt: 'ToolBazaar Welcome Home — Premium Digital Tools, Official Accounts & Instant Delivery',
+    targetCategory: 'all',
+    borderGlow: 'rgba(139, 92, 246, 0.45)',
+  },
+  {
+    id: 'banner-exclusive-deals',
+    imageSrc: '/assets/aistudio/image_e6944b96.png',
+    alt: 'Premium Digital Tools Exclusive Deals — Save More Today on ChatGPT Plus, CapCut Pro, Canva Pro, Adobe CC and Photoshop',
+    targetCategory: 'ai',
+    borderGlow: 'rgba(168, 85, 247, 0.48)',
+  },
+  {
+    id: 'banner-limited-discount',
+    imageSrc: '/assets/aistudio/image_b36b8b33.png',
+    alt: 'Premium Digital Tools Marketplace — Limited Time Discount Up to 50% Off',
+    targetCategory: 'design',
+    borderGlow: 'rgba(99, 102, 241, 0.48)',
+  },
+];
+
+export const INITIAL_TOOLS: ToolProduct[] = [
+  {
+    id: 'chatgpt-plus',
+    name: 'ChatGPT Plus',
+    badgeText: 'Premium',
+    subtitle: 'Official GPT-4o Access',
+    description:
+      'Experience full ChatGPT Plus with GPT-4o, DALL-E image creation, deep web browsing, file uploads, and priority response speeds.',
+    category: 'ai',
+    brand: 'chatgpt',
+    originalPrice: 1999,
+    price: 1449,
+    discountPercent: 27,
+    available: 42,
+    sold: 158,
+    trending: true,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Official GPT-4o & o1 reasoning access',
+      'DALL-E image generation & vision tools',
+      'Fast priority speed during peak hours',
+      'Full replacement warranty for plan duration',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 1449, originalPrice: 1999 },
+      { id: '3m', label: '3 Months', months: 3, price: 3999, originalPrice: 5997 },
+      { id: '12m', label: '1 Year', months: 12, price: 13999, originalPrice: 23988 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(16, 163, 127, 0.24) 0%, rgba(18, 22, 36, 0.94) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(20, 184, 140, 0.42)',
+      glowColor: 'rgba(16, 163, 127, 0.26)',
+    },
+  },
+  {
+    id: 'capcut-pro',
+    name: 'CapCut Pro',
+    badgeText: 'Premium',
+    subtitle: 'Pro Video Editing Features',
+    description:
+      'Unlock every CapCut Pro transition, auto-caption style, 4K 60fps watermark-free export, cloud sync, and AI background removal.',
+    category: 'video',
+    brand: 'capcut',
+    originalPrice: 999,
+    price: 599,
+    discountPercent: 40,
+    available: 87,
+    sold: 413,
+    trending: true,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'All Pro effects, LUTs & trending templates',
+      'Auto captions & AI voiceover studio',
+      'Works on Mobile, Windows & macOS',
+      'Zero watermark 4K Ultra HD exports',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 599, originalPrice: 999 },
+      { id: '3m', label: '3 Months', months: 3, price: 1599, originalPrice: 2997 },
+      { id: '12m', label: '1 Year', months: 12, price: 4999, originalPrice: 11988 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(168, 174, 210, 0.2) 0%, rgba(22, 20, 36, 0.95) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(196, 202, 232, 0.34)',
+      glowColor: 'rgba(226, 232, 240, 0.16)',
+    },
+  },
+  {
+    id: 'canva-pro',
+    name: 'Canva Pro',
+    badgeText: 'Premium',
+    subtitle: 'All Pro Features Unlocked',
+    description:
+      'Direct activation on your own email. Unlock Magic Studio AI, 100M+ stock photos, Brand Kits, one-click Background Remover & Resize.',
+    category: 'design',
+    brand: 'canva',
+    originalPrice: 1999,
+    price: 1299,
+    discountPercent: 35,
+    available: 56,
+    sold: 276,
+    trending: true,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Activated directly on your personal email',
+      '100M+ premium templates, fonts & graphics',
+      'Magic Eraser, Expand & Background Remover',
+      '1TB cloud storage & Brand Kit access',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 1299, originalPrice: 1999 },
+      { id: '6m', label: '6 Months', months: 6, price: 3499, originalPrice: 5999 },
+      { id: '12m', label: '1 Year', months: 12, price: 5499, originalPrice: 11999 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(37, 99, 235, 0.28) 0%, rgba(19, 21, 44, 0.94) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(59, 130, 246, 0.48)',
+      glowColor: 'rgba(59, 130, 246, 0.28)',
+    },
+  },
+  {
+    id: 'adobe-cc',
+    name: 'Adobe CC',
+    badgeText: 'Premium',
+    subtitle: 'Ps, Pr, Ae & More (Full Apps)',
+    description:
+      'Complete Adobe Creative Cloud All Apps plan with Photoshop, Premiere Pro, After Effects, Illustrator, Firefly Generative AI & 100GB cloud.',
+    category: 'design',
+    brand: 'adobe',
+    originalPrice: 4999,
+    price: 2499,
+    discountPercent: 50,
+    available: 23,
+    sold: 119,
+    trending: true,
+    deliveryType: 'Instant Delivery',
+    features: [
+      '20+ Official Adobe Desktop & Mobile Apps',
+      'Photoshop Generative Fill & Firefly AI credits',
+      '100GB Creative Cloud storage included',
+      'Activated on your Adobe ID (2 devices)',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 2499, originalPrice: 4999 },
+      { id: '3m', label: '3 Months', months: 3, price: 6999, originalPrice: 14997 },
+      { id: '12m', label: '1 Year', months: 12, price: 21999, originalPrice: 59988 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(225, 29, 72, 0.30) 0%, rgba(30, 17, 36, 0.94) 55%, rgba(17, 13, 28, 0.98) 100%)',
+      cardBorder: 'rgba(244, 63, 94, 0.48)',
+      glowColor: 'rgba(225, 29, 72, 0.28)',
+    },
+  },
+  {
+    id: 'midjourney-pro',
+    name: 'Midjourney Pro',
+    badgeText: 'Premium',
+    subtitle: 'Fast GPU & Stealth Mode',
+    description:
+      'Create hyper-realistic AI art and commercial visuals with Midjourney v6.1, 30 Fast GPU hours, Relax mode, and private Stealth generations.',
+    category: 'ai',
+    brand: 'midjourney',
+    originalPrice: 2499,
+    price: 1199,
+    discountPercent: 52,
+    available: 31,
+    sold: 204,
+    trending: true,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Midjourney v6.1 & Niji 6 web + Discord access',
+      'Fast GPU queue + Unlimited Relax renders',
+      'Commercial usage rights & HD upscaling',
+      'Instant guided onboarding after checkout',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 1199, originalPrice: 2499 },
+      { id: '3m', label: '3 Months', months: 3, price: 3299, originalPrice: 7497 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(99, 102, 241, 0.28) 0%, rgba(19, 20, 42, 0.94) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(129, 140, 248, 0.44)',
+      glowColor: 'rgba(99, 102, 241, 0.26)',
+    },
+  },
+  {
+    id: 'claude-pro',
+    name: 'Claude Pro',
+    badgeText: 'Premium',
+    subtitle: 'Sonnet & Opus Coding AI',
+    description:
+      'Official Claude Pro workspace with 5x higher usage limits, Artifacts preview, Projects knowledge base, and top-tier coding & writing output.',
+    category: 'ai',
+    brand: 'claude',
+    originalPrice: 1999,
+    price: 1299,
+    discountPercent: 35,
+    available: 19,
+    sold: 162,
+    trending: true,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Claude Sonnet & Opus priority access',
+      'Interactive Artifacts & 200K context window',
+      'Projects workspace for PDFs & codebases',
+      '100% safe official subscription',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 1299, originalPrice: 1999 },
+      { id: '3m', label: '3 Months', months: 3, price: 3599, originalPrice: 5997 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(217, 119, 87, 0.26) 0%, rgba(28, 19, 34, 0.94) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(234, 138, 104, 0.44)',
+      glowColor: 'rgba(217, 119, 87, 0.24)',
+    },
+  },
+  {
+    id: 'premiere-pro',
+    name: 'Premiere Pro',
+    badgeText: 'Premium',
+    subtitle: '4K Cinema Editing Suite',
+    description:
+      'Industry-standard timeline video editing with AI Text-Based Editing, Auto Reframe, Lumetri Color grading, and Motion Graphics templates.',
+    category: 'video',
+    brand: 'premiere',
+    originalPrice: 2999,
+    price: 1499,
+    discountPercent: 50,
+    available: 44,
+    sold: 189,
+    trending: false,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Official Adobe Premiere Pro license',
+      'AI Enhance Speech & Text-Based Editing',
+      'Supports Windows & Apple Silicon Macs',
+      '100GB Creative Cloud project sync',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 1499, originalPrice: 2999 },
+      { id: '6m', label: '6 Months', months: 6, price: 7999, originalPrice: 17994 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(139, 92, 246, 0.28) 0%, rgba(23, 18, 44, 0.94) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(167, 139, 250, 0.45)',
+      glowColor: 'rgba(139, 92, 246, 0.26)',
+    },
+  },
+  {
+    id: 'figma-pro',
+    name: 'Figma Pro',
+    badgeText: 'Premium',
+    subtitle: 'Unlimited Files & Dev Mode',
+    description:
+      'Full Figma Professional seat with unlimited design files, shared component libraries, variables, Dev Mode inspection, and FigJam boards.',
+    category: 'design',
+    brand: 'figma',
+    originalPrice: 1499,
+    price: 699,
+    discountPercent: 53,
+    available: 64,
+    sold: 245,
+    trending: false,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Unlimited Figma & FigJam projects',
+      'Team libraries, variables & Dev Mode',
+      'Activated directly on your Figma email',
+      'Seamless handoff & prototyping flows',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 699, originalPrice: 1499 },
+      { id: '12m', label: '1 Year', months: 12, price: 5999, originalPrice: 17988 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(162, 89, 255, 0.24) 0%, rgba(22, 18, 42, 0.94) 55%, rgba(16, 14, 30, 0.98) 100%)',
+      cardBorder: 'rgba(162, 89, 255, 0.44)',
+      glowColor: 'rgba(162, 89, 255, 0.24)',
+    },
+  },
+  {
+    id: 'notion-ai',
+    name: 'Notion Plus + AI',
+    badgeText: 'Premium',
+    subtitle: 'Workspace + Unlimited AI',
+    description:
+      'Supercharge notes, wikis, and projects with Notion Plus and built-in Notion AI writer, Q&A across docs, and unlimited file uploads.',
+    category: 'productivity',
+    brand: 'notion',
+    originalPrice: 1299,
+    price: 549,
+    discountPercent: 58,
+    available: 72,
+    sold: 318,
+    trending: false,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Unlimited blocks & file uploads',
+      'Built-in Notion AI writer & Q&A',
+      'Custom domains & 30-day page history',
+      'Up to 100 guest collaborators',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 549, originalPrice: 1299 },
+      { id: '12m', label: '1 Year', months: 12, price: 4799, originalPrice: 15588 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(148, 163, 184, 0.20) 0%, rgba(20, 20, 34, 0.95) 55%, rgba(15, 14, 28, 0.98) 100%)',
+      cardBorder: 'rgba(148, 163, 184, 0.36)',
+      glowColor: 'rgba(148, 163, 184, 0.16)',
+    },
+  },
+  {
+    id: 'grammarly-pro',
+    name: 'Grammarly Pro',
+    badgeText: 'Premium',
+    subtitle: 'AI Rewrite & Plagiarism',
+    description:
+      'Write flawlessly across browser, Docs, and email with full-sentence clarity rewrites, tone detection, and instant plagiarism checks.',
+    category: 'productivity',
+    brand: 'grammarly',
+    originalPrice: 1499,
+    price: 499,
+    discountPercent: 67,
+    available: 95,
+    sold: 512,
+    trending: false,
+    deliveryType: 'Instant Delivery',
+    features: [
+      'Full-sentence clarity & tone rewrites',
+      'Built-in plagiarism & citation checker',
+      '2,000 monthly generative AI prompts',
+      'Chrome, Edge, Word & macOS support',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 499, originalPrice: 1499 },
+      { id: '6m', label: '6 Months', months: 6, price: 2199, originalPrice: 8994 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(21, 195, 154, 0.24) 0%, rgba(16, 24, 34, 0.94) 55%, rgba(15, 14, 28, 0.98) 100%)',
+      cardBorder: 'rgba(21, 195, 154, 0.44)',
+      glowColor: 'rgba(21, 195, 154, 0.24)',
+    },
+  },
+  {
+    id: 'perplexity-pro',
+    name: 'Perplexity Pro',
+    badgeText: 'Premium',
+    subtitle: 'Deep AI Search & Citations',
+    description:
+      'Run 300+ daily Pro Searches powered by top frontier models with live citations, Deep Research reports, and PDF file analysis.',
+    category: 'ai',
+    brand: 'perplexity',
+    originalPrice: 1999,
+    price: 899,
+    discountPercent: 55,
+    available: 38,
+    sold: 147,
+    trending: false,
+    deliveryType: 'Instant Delivery',
+    features: [
+      '300+ daily Pro Search & Deep Research runs',
+      'Switch between top frontier AI models',
+      'Unlimited PDF & document analysis',
+      'Direct official voucher activation',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 899, originalPrice: 1999 },
+      { id: '12m', label: '1 Year', months: 12, price: 6999, originalPrice: 23988 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(32, 184, 205, 0.26) 0%, rgba(16, 24, 38, 0.94) 55%, rgba(15, 14, 28, 0.98) 100%)',
+      cardBorder: 'rgba(32, 184, 205, 0.44)',
+      glowColor: 'rgba(32, 184, 205, 0.24)',
+    },
+  },
+  {
+    id: 'envato-elements',
+    name: 'Envato Elements',
+    badgeText: 'Premium',
+    subtitle: 'Unlimited Assets & Videos',
+    description:
+      'Download unlimited stock videos, Premiere & After Effects templates, royalty-free music, fonts, and WordPress themes with commercial license.',
+    category: 'more',
+    brand: 'envato',
+    originalPrice: 2499,
+    price: 799,
+    discountPercent: 68,
+    available: 51,
+    sold: 284,
+    trending: false,
+    deliveryType: 'Instant Delivery',
+    features: [
+      '18M+ creative assets, LUTs & motion graphics',
+      'Commercial license certificate per download',
+      'WordPress themes, UI kits & 3D renders',
+      'Instant account delivery via email',
+    ],
+    plans: [
+      { id: '1m', label: '1 Month', months: 1, price: 799, originalPrice: 2499 },
+      { id: '3m', label: '3 Months', months: 3, price: 2099, originalPrice: 7497 },
+    ],
+    theme: {
+      cardBg:
+        'linear-gradient(145deg, rgba(129, 180, 65, 0.24) 0%, rgba(20, 25, 32, 0.94) 55%, rgba(15, 14, 28, 0.98) 100%)',
+      cardBorder: 'rgba(132, 204, 22, 0.42)',
+      glowColor: 'rgba(132, 204, 22, 0.22)',
+    },
+  },
+];
+
+export const INITIAL_ORDERS: OrderRecord[] = [
+  {
+    id: 'ORD-1047',
+    createdAt: '2026-11-22T14:20:00.000Z',
+    status: 'Delivered',
+    items: [
+      {
+        toolId: 'canva-pro',
+        planId: '1m',
+        planLabel: '1 Month',
+        name: 'Canva Pro',
+        brand: 'canva',
+        unitPrice: 1299,
+        unitOriginalPrice: 1999,
+        quantity: 1,
+      },
+    ],
+    subtotal: 1299,
+    discount: 0,
+    total: 1299,
+    customerEmail: 'arjun.creator@toolbazaar.in',
+    accessKey: 'TB-CNVA-84K2-P9LM',
+  },
+  {
+    id: 'ORD-1046',
+    createdAt: '2026-11-18T09:45:00.000Z',
+    status: 'Active',
+    items: [
+      {
+        toolId: 'capcut-pro',
+        planId: '1m',
+        planLabel: '1 Month',
+        name: 'CapCut Pro',
+        brand: 'capcut',
+        unitPrice: 599,
+        unitOriginalPrice: 999,
+        quantity: 1,
+      },
+    ],
+    subtotal: 599,
+    discount: 60,
+    total: 539,
+    promoCode: 'SAVE10',
+    customerEmail: 'arjun.creator@toolbazaar.in',
+    accessKey: 'TB-CPCT-39V7-W2QZ',
+  },
+];
+
+export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
+  {
+    id: 'notif-1',
+    title: 'Flash Offer: Extra 20% Off!',
+    message: 'Apply code BAZAAR20 at checkout for 20% off any AI or Creator tool.',
+    time: '5m ago',
+    read: false,
+    accent: 'purple',
+  },
+  {
+    id: 'notif-2',
+    title: 'Order #ORD-1047 Delivered',
+    message: 'Your Canva Pro activation link & key are ready inside Orders.',
+    time: '2h ago',
+    read: false,
+    accent: 'green',
+  },
+  {
+    id: 'notif-3',
+    title: 'Adobe CC Restocked',
+    message: '23 fresh official Creative Cloud All Apps slots are now live at 50% OFF.',
+    time: '1d ago',
+    read: true,
+    accent: 'amber',
+  },
+];
